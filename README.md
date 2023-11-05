@@ -10,15 +10,15 @@ Below is an overview of the repository:
    
 1. **Main functions for querying on Dataset**
    <br>a. _main.py_: load transaction dataset and **query the aggregated revenue of the a product**. Specifically, it executes the following:
-   <br>         1. Start a spark session.
+   <br>         i. Start a spark session.
    <br>`spark = SparkSession.builder.appName("PySpark").config("spark.some.config.option", "some-value").getOrCreate()`<br>
-   <br>         2. Load dataset.
+   <br>         ii. Load dataset.
    <br>`Dataset = spark.read.csv("SalesTransactionV4a.csv", header=True, inferSchema=True)`<br>
-   <br>         3. Create column _Revenue_ by **multiplying the unit price and quantity sold** of a given product.
+   <br>         iii. Create column _Revenue_ by **multiplying the unit price and quantity sold** of a given product.
    <br>`Dataset = Dataset.withColumn('Revenue', Dataset.Price*Dataset.Quantity)`<br>
-   <br>         4. **Aggregate the Revenue of each product** using the column name _SumRevenue_.
+   <br>         iv. **Aggregate the Revenue of each product** using the column name _SumRevenue_.
    <br>`ProductRevenue = Dataset.groupBy("ProductNo","ProductName").sum("Revenue").withColumnRenamed("sum(Revenue)", "SumRevenue")`<br>
-   <br>         5. **Create view** and **query the product of interest**.
+   <br>         v. **Create view** and **query the product of interest**.
    <br>`ProductRevenue.createOrReplaceTempView("ProductRevenue")
     results_view = spark.sql("SELECT * FROM ProductRevenue WHERE ProductNo = '22491'")
     results_view.show()`<br>
@@ -29,21 +29,21 @@ Below is an overview of the repository:
    |---|---|---|
    |22491| Pack Of 12 Coloured Pencil | 43233.17 |
 
-<br>         5. **Output the revenue** of  **the product of interest**.
+    <br>         vi. **Output the revenue** of  **the product of interest**.
     <br>`RevenueOutput = results_view.collect()[0][2]`
     <br>`return RevenueOutput`<br>
 
-   <br>d. _test_main.py_: Run all steps in main.py and test if the output number is correct.
+   <br>b. _test_main.py_: Run all steps in main.py and test if the output number is correct.
    
 3. **Github actions setup for continuous integration**
-  <br>e. _.github/workflows/cicd.yml_: Quality control actions are triggered when pushed/ pulled to main branch. After setting up the environment, actions of **installing packages**, **linting**, **testing**, **formatting** would be executed in order (specified in Makefile). 
+  <br>c. _.github/workflows/cicd.yml_: Quality control actions are triggered when pushed/ pulled to main branch. After setting up the environment, actions of **installing packages**, **linting**, **testing**, **formatting** would be executed in order (specified in Makefile). 
 
 4. **Other files for development environment settings**
-  <br>f. _.devcontainer_: set up the environment for development.
-  <br>g. _.gitignore_: specify file names to ignore.
-  <br>h. _requirements.txt_: list required packages for the project.
+  <br>d. _.devcontainer_: set up the environment for development.
+  <br>e. _.gitignore_: specify file names to ignore.
+  <br>f. _requirements.txt_: list required packages for the project.
 
 5. **Description of the project**
-   <br>i. _README.md_: THIS FILE, explaining the purpose and structure of the directory, with screenshot of example output.
+   <br>g. _README.md_: THIS FILE, explaining the purpose and structure of the directory, with screenshot of example output.
 
 
