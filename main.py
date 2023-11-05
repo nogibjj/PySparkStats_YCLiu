@@ -26,4 +26,4 @@ def QueryProdRev():
     return RevenueOutput
 
 if __name__ == "__main__":
-     QueryProdRev()
+    QueryProdRev()
