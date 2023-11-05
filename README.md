@@ -14,16 +14,16 @@ Below is an overview of the repository:
    <br>`spark = SparkSession.builder.appName("PySpark").config("spark.some.config.option", "some-value").getOrCreate()`<br>
    <br>         ii. Load dataset.
    <br>`Dataset = spark.read.csv("SalesTransactionV4a.csv", header=True, inferSchema=True)`<br>
-   <br>         iii. Create column _Revenue_ by **multiplying the unit price and quantity sold** of a given product.
+   <br>         iii. Create a column named _Revenue_ by **multiplying the unit price and quantity sold** of a given product.
    <br>`Dataset = Dataset.withColumn('Revenue', Dataset.Price*Dataset.Quantity)`<br>
-   <br>         iv. **Aggregate the Revenue of each product** using the column name _SumRevenue_.
+   <br>         iv. Create a column named _SumRevenue_ of the **aggregated revenue of each product**.
    <br>`ProductRevenue = Dataset.groupBy("ProductNo","ProductName").sum("Revenue").withColumnRenamed("sum(Revenue)", "SumRevenue")`<br>
-   <br>         v. **Create view** and **query the product of interest**.
+   <br>         v. **Create SQL view** and **query the product of interest**.
    <br>`ProductRevenue.createOrReplaceTempView("ProductRevenue")
     results_view = spark.sql("SELECT * FROM ProductRevenue WHERE ProductNo = '22491'")
     results_view.show()`<br>
     
-   **Resulting table**
+   **Resulted table**
    
    | ProductNo | ProductName | SumRevenue |
    |---|---|---|
