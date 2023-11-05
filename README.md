@@ -30,8 +30,8 @@ Below is an overview of the repository:
    |22491| Pack Of 12 Coloured Pencil | 43233.17 |
 
 <br>         5. **Output the revenue** of  **the product of interest**.
-    <br>`RevenueOutput = results_view.collect()[0][2]
-    return RevenueOutput`<br>
+    <br>`RevenueOutput = results_view.collect()[0][2]`
+    <br>`return RevenueOutput`<br>
 
    <br>d. _test_main.py_: Run all steps in main.py and test if the output number is correct.
    
