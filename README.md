@@ -15,7 +15,7 @@ Below is an overview of the repository:
    <br>         2. Load dataset.
    <br>`Dataset = spark.read.csv("SalesTransactionV4a.csv", header=True, inferSchema=True)`<br>
    <br>         3. Create column _Revenue_ by **multiplying the unit price and quantity sold** of a given product.
-   <br>` Dataset = Dataset.withColumn('Revenue', Dataset.Price*Dataset.Quantity)`<br>
+   <br>`Dataset = Dataset.withColumn('Revenue', Dataset.Price*Dataset.Quantity)`<br>
    <br>         4. **Aggregate the Revenue of each product** using the column name _SumRevenue_.
    <br>`ProductRevenue = Dataset.groupBy("ProductNo","ProductName").sum("Revenue").withColumnRenamed("sum(Revenue)", "SumRevenue")`<br>
    <br>         5. **Create view** and **query the product of interest**.
@@ -29,7 +29,7 @@ Below is an overview of the repository:
    |---|---|---|
    |22491| Pack Of 12 Coloured Pencil | 43233.17 |
 
-<br>         5. **Output the revenue** of  ** the product of interest**.
+<br>         5. **Output the revenue** of  **the product of interest**.
     <br>`RevenueOutput = results_view.collect()[0][2]
     return RevenueOutput`<br>
 
