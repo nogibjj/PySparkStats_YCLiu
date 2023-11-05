@@ -4,16 +4,16 @@ from pyspark.sql import SparkSession
 def QueryProdRev():
      # create spark session
      spark = SparkSession.builder.appName("PySpark")\
-                    .config("spark.some.config.option", "some-value")\
-                    .getOrCreate()
+          .config("spark.some.config.option", "some-value")\
+          .getOrCreate()
      # load dataset
      Dataset = spark.read.csv("SalesTransactionV4a.csv", header=True, inferSchema=True)
      # add new column
      Dataset = Dataset.withColumn('Revenue', Dataset.Price*Dataset.Quantity)
      # create new dataframe
      ProductRevenue = Dataset.groupBy("ProductNo","ProductName")\
-                         .sum("Revenue")\
-                         .withColumnRenamed("sum(Revenue)", "SumRevenue")
+          .sum("Revenue")\
+          .withColumnRenamed("sum(Revenue)", "SumRevenue")
      # create view for sql query
      ProductRevenue.createOrReplaceTempView("ProductRevenue")
      
