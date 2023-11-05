@@ -15,6 +15,7 @@ kaggle
 matplotlib
 numpy
 pandas
+pyspark
 
 #summary report
 fpdf
