@@ -1,4 +1,4 @@
-[![Python application test with Github Actions](https://github.com/nogibjj/PandasStats_YCLiu/actions/workflows/main.yml/badge.svg)](https://github.com/nogibjj/PandasStats_YCLiu/actions/workflows/main.yml)
+[![Python Continuous Integration with Github Actions](https://github.com/nogibjj/PySparkStats_YCLiu/actions/workflows/main.yml/badge.svg)](https://github.com/nogibjj/PySparkStats_YCLiu/actions/workflows/main.yml)
 
 ## Use PySpark To Transform and Query Data
 
