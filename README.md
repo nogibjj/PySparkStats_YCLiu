@@ -4,7 +4,7 @@
 
 This repository demonstrates how to use **PySpark to transform and query a large dataset**. PySpark is the python API for Apache Spark. Thanks to the idea of the resilient distributed dataset (RDD), Spark can be used to manipulate large amount of data efficiently because it can distribute work on multiple (cores) of machines. 
 
-The **dataset used** for demonstration is the **transaction records of an E-Commerce company in UK**, downloaded from [kaggle](https://www.kaggle.com/datasets/gabrielramos87/an-online-shop-business), with ~0.54 million rows of data with the following columns: _TransactionNo_, _Date_, _ProductNo_, _ProductName_, _Price_, _Quantity_, _CustomerNo_, _Country_.
+The **dataset used** for demonstration is the **transaction records of an E-Commerce company in the UK**, downloaded from [kaggle](https://www.kaggle.com/datasets/gabrielramos87/an-online-shop-business), with ~0.54 million rows of data with the following columns: _TransactionNo_, _Date_, _ProductNo_, _ProductName_, _Price_, _Quantity_, _CustomerNo_, _Country_.
 
 Below is an overview of the repository:
    
