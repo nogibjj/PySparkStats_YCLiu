@@ -8,6 +8,7 @@ def QueryProdRev():
                         .getOrCreate()
     # load dataset
     Dataset = spark.read.csv("SalesTransactionV4a.csv", header=True, inferSchema=True)
+    
     # add new column
     Dataset = Dataset.withColumn('Revenue', Dataset.Price*Dataset.Quantity)
     # create new dataframe
