@@ -1,6 +1,6 @@
 [![Python Continuous Integration with Github Actions](https://github.com/nogibjj/PySparkStats_YCLiu/actions/workflows/main.yml/badge.svg)](https://github.com/nogibjj/PySparkStats_YCLiu/actions/workflows/main.yml)
 
-## Use PySpark To Transform and Query Data
+## Use PySpark To Transform And Query Data
 
 This repository demonstrates how to use **PySpark to transform and query a large dataset**. PySpark is the python API for Apache Spark. Thanks to the idea of the resilient distributed dataset (RDD), Spark can be used to manipulate large amount of data efficiently because it can distribute work on multiple (cores) of machines. 
 
