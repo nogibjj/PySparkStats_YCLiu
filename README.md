@@ -9,7 +9,7 @@ The **dataset used** for demonstration is the **transaction records of an E-Comm
 Below is an overview of the repository:
    
 1. **Main functions for querying on Dataset**
-   <br>a. _main.py_: load transaction dataset and **query the aggregated revenue of the a product**. Specifically, it executes the following:<br>
+   <br>a. _main.py_: load transaction dataset and **query the aggregated revenue of the a product using PySpark**. Specifically, it executes the following:<br>
    <br>         i. Start a spark session.
    <br>`spark = SparkSession.builder.appName("PySpark").config("spark.some.config.option", "some-value").getOrCreate()`<br>
    <br>         ii. Load dataset.
