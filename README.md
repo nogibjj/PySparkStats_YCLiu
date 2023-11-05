@@ -36,7 +36,7 @@ Below is an overview of the repository:
    <br>b. _test_main.py_: Run all steps in _main.py_ and test if the output number is correct.
    
 3. **Github actions setup for continuous integration**
-  <br>c. _.github/workflows/cicd.yml_: Quality control actions are triggered when pushed/ pulled to main branch. After setting up the environment, actions of **installing packages**, **linting**, **testing**, **formatting** would be executed in order (specified in Makefile). 
+  <br>c. _.github/workflows/main.yml_: Quality control actions are triggered when pushed/ pulled to main branch. After setting up the environment, actions of **installing packages**, **linting**, **testing**, **formatting** would be executed in order (specified in Makefile). 
 
 4. **Other files for development environment settings**
   <br>d. _.devcontainer_: set up the environment for development.
