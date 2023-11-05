@@ -9,6 +9,7 @@ boto3
 #web
 fastapi
 uvicorn
+kaggle
 
 #Datascience
 matplotlib
