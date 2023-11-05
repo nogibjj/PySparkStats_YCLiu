@@ -44,6 +44,6 @@ Below is an overview of the repository:
   <br>f. _requirements.txt_: list required packages for the project.
 
 5. **Description of the project**
-   <br>g. _README.md_: THIS FILE, explaining the purpose and structure of the directory, with screenshot of example output.
+   <br>g. _README.md_: THIS FILE, explaining the purpose and structure of the directory, with example output and code snippets.
 
 
